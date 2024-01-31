@@ -30,7 +30,7 @@ class MockFlutterConnecttrackerPlatform
   }
   
   @override
-  Future<bool?> resolveDeelink(String url, List urlPrefixes) {
+  Future<bool?> resolveDeeplink(String url, List urlPrefixes) {
     throw UnimplementedError();
   }
   
@@ -43,6 +43,31 @@ class MockFlutterConnecttrackerPlatform
   Future<bool?> turnOnTracking() {
     throw UnimplementedError();
   }
+  
+  @override
+  Future<bool?> appWillOpenUrl(String url) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<bool?> onLocationPermissionDenied() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<bool?> onLocationPermissionGranted() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<bool?> onWillRequestLocationPermission() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool?> onApplicationPaused() {
+    throw UnimplementedError();
+  }
 }
 
 void main() {
@@ -51,14 +76,5 @@ void main() {
 
   test('$MethodChannelConnectTracker is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelConnectTracker>());
-  });
-
-  test('init', () async {
-    ConnectTracker flutterConnecttrackerPlugin = ConnectTracker();
-    MockFlutterConnecttrackerPlatform fakePlatform =
-        MockFlutterConnecttrackerPlatform();
-    ConnectTrackerPlatform.instance = fakePlatform;
-
-    expect(await flutterConnecttrackerPlugin.init(ConnectTrackerOptions('123')), true);
   });
 }

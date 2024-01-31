@@ -17,7 +17,7 @@ class MethodChannelConnectTracker extends ConnectTrackerPlatform {
         _options?.callbacks?.onEventTracked?.call(call.arguments);
         break;
       case 'onEventTrackedFailed':
-              _options?.callbacks?.onEventTrackedFailed?.call(call.arguments);
+        _options?.callbacks?.onEventTrackedFailed?.call(call.arguments);
         break;
       case 'onAttributionChanged':
         _options?.callbacks?.onAttributionChanged?.call(call.arguments);
@@ -26,6 +26,13 @@ class MethodChannelConnectTracker extends ConnectTrackerPlatform {
         _options?.callbacks?.onSessionStartSuccess?.call(call.arguments);
         break;
       case 'onSessionStartFailed':
+        _options?.callbacks?.onSessionStartFailed?.call(call.arguments);
+        break;
+      case 'onAppTrackingPermissionGranted':
+        _options?.callbacks?.onAppTrackingPermissionGranted
+            ?.call(call.arguments);
+        break;
+      case 'onAppTrackingPermissionDenied':
         _options?.callbacks?.onSessionStartFailed?.call(call.arguments);
         break;
       default:
@@ -37,11 +44,15 @@ class MethodChannelConnectTracker extends ConnectTrackerPlatform {
     _options = options;
     methodChannel.setMethodCallHandler(_methodCallHandler);
 
-    final result = await methodChannel.invokeMethod<bool>('init', <String, dynamic>{
-      'appKey': options.appKey,
+    final result =
+        await methodChannel.invokeMethod<bool>('init', <String, dynamic>{
+      'androidAppKey': options.androidAppKey,
+      'iosAppKey': options.iosAppKey,
       'sandbox': options.isSandbox,
       'disableTracking': options.isAdIdTrackingDisabled,
-      'useLocation': options.useLocation
+      'useLocation': options.useLocation,
+      'requestAppTrackingPermission': options.requestAppTrackingPermission,
+      'usePushNotifications': options.usePushNotifications
     });
 
     return result;
@@ -49,49 +60,82 @@ class MethodChannelConnectTracker extends ConnectTrackerPlatform {
 
   @override
   Future<bool?> trackEvent(String name, value) async {
-    final result = await methodChannel.invokeMethod<bool>('trackEvent', <String, dynamic> {
-      'name': name, 'value': value
-    });
+    final result = await methodChannel.invokeMethod<bool>(
+        'trackEvent', <String, dynamic>{'name': name, 'value': value});
 
     return result;
   }
 
-   @override
+  @override
+  Future<bool?> appWillOpenUrl(String url) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('appWillOpenUrl', <String, dynamic>{'url': url});
+
+    return result;
+  }
+
+  @override
   Future<bool?> deleteUserData() async {
     final result = await methodChannel.invokeMethod<bool>('deleteUserData');
     return result;
   }
-  
+
   @override
   Future<bool?> isInitialized() async {
     final result = await methodChannel.invokeMethod<bool>('isInitialized');
     return result;
   }
-  
+
   @override
   Future<bool?> isTrackingOn() async {
     final result = await methodChannel.invokeMethod<bool>('isTrackingOn');
     return result;
   }
-  
+
   @override
-  Future<bool?> resolveDeelink(String url, List urlPrefixes) async {
-    final result = await methodChannel.invokeMethod<bool>('trackEvent', <String, dynamic> {
-      'url': url, 'urlPrefixes': urlPrefixes
-    });
+  Future<bool?> resolveDeeplink(String url, List urlPrefixes) async {
+    final result = await methodChannel.invokeMethod<bool>('resolveDeeplink',
+        <String, dynamic>{'url': url, 'urlPrefixes': urlPrefixes});
 
     return result;
   }
-  
+
   @override
-  Future<bool?> turnOffTracking()  async {
+  Future<bool?> turnOffTracking() async {
     final result = await methodChannel.invokeMethod<bool>('turnOffTracking');
     return result;
   }
-  
+
   @override
   Future<bool?> turnOnTracking() async {
     final result = await methodChannel.invokeMethod<bool>('turnOnTracking');
+    return result;
+  }
+
+  @override
+  Future<bool?> onLocationPermissionDenied() async {
+    final result =
+        await methodChannel.invokeMethod<bool>('onLocationPermissionDenied');
+    return result;
+  }
+
+  @override
+  Future<bool?> onLocationPermissionGranted() async {
+    final result =
+        await methodChannel.invokeMethod<bool>('onLocationPermissionGranted');
+    return result;
+  }
+
+  @override
+  Future<bool?> onWillRequestLocationPermission() async {
+    final result = await methodChannel
+        .invokeMethod<bool>('onWillRequestLocationPermission');
+    return result;
+  }
+
+  @override
+  Future<bool?> onApplicationPaused() async {
+    final result = await methodChannel.invokeMethod('onApplicationPaused');
     return result;
   }
 }

@@ -1,11 +1,14 @@
 import 'package:flutter_connecttracker/connecttracker_callbacks.dart';
 
 class ConnectTrackerOptions {
-  String appKey;
+  String iosAppKey;
+  String androidAppKey;
   bool useLocation = false;
   bool isSandbox = false;
   bool isAdIdTrackingDisabled = false;
-  ConnectTrackerCallbacks? callbacks;
+  bool usePushNotifications = false;
+  bool requestAppTrackingPermission = false;
 
-  ConnectTrackerOptions(this.appKey);
+  ConnectTrackerCallbacks? callbacks;
+  ConnectTrackerOptions(this.androidAppKey, this.iosAppKey);
 }

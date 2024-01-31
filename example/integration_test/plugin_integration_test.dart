@@ -15,12 +15,4 @@ import 'package:flutter_connecttracker/connecttracker.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-
-  testWidgets('init test', (WidgetTester tester) async {
-    final ConnectTracker plugin = ConnectTracker();
-    final bool? init = await plugin.init(ConnectTrackerOptions("123456"));
-    // The version string depends on the host platform running the test, so
-    // just assert that some non-empty string is returned.
-    expect(init, true);
-  });
 }

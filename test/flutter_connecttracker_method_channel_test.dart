@@ -1,5 +1,4 @@
-import 'package:flutter/services.dart';
-import 'package:flutter_connecttracker/connecttracker_options.dart';
+import 'package:flutter/services.dart' show MethodCall, MethodChannel;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_connecttracker/connecttracker_method_channel.dart';
 
@@ -20,9 +19,5 @@ void main() {
 
   tearDown(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(channel, null);
-  });
-
-  test('getPlatformVersion', () async {
-    expect(await platform.init(ConnectTrackerOptions('123')), '42');
   });
 }

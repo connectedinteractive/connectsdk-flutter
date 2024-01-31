@@ -24,7 +24,7 @@ abstract class ConnectTrackerPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<bool?> init(ConnectTrackerOptions options){
+  Future<bool?> init(ConnectTrackerOptions options) {
     throw UnimplementedError('init has not been implemented.');
   }
 
@@ -32,15 +32,19 @@ abstract class ConnectTrackerPlatform extends PlatformInterface {
     throw UnimplementedError('trackEvent has not been implemented');
   }
 
-  Future<bool?> resolveDeelink(String url, List urlPrefixes) {
-    throw UnimplementedError('resolveDeelink has not been implemented');
+  Future<bool?> appWillOpenUrl(String url) {
+    throw UnimplementedError('appWillOpenUrl has not been implemented');
+  }
+
+  Future<bool?> resolveDeeplink(String url, List urlPrefixes) {
+    throw UnimplementedError('resolveDeeplink has not been implemented');
   }
 
   Future<bool?> isTrackingOn() {
     throw UnimplementedError('isTrackingOn has not been implemented');
   }
 
-    Future<bool?> turnOnTracking() {
+  Future<bool?> turnOnTracking() {
     throw UnimplementedError('turnOnTracking has not been implemented');
   }
 
@@ -48,11 +52,27 @@ abstract class ConnectTrackerPlatform extends PlatformInterface {
     throw UnimplementedError('turnOffTracking has not been implemented');
   }
 
-    Future<bool?> isInitialized() {
+  Future<bool?> isInitialized() {
     throw UnimplementedError('turnOffTracking has not been implemented');
   }
 
-    Future<bool?> deleteUserData() {
+  Future<bool?> deleteUserData() {
     throw UnimplementedError('turnOffTracking has not been implemented');
+  }
+
+  Future<bool?> onWillRequestLocationPermission() {
+    throw UnimplementedError('onWillRequestLocationPermission has not been implemented');
+  }
+
+  Future<bool?> onLocationPermissionDenied() {
+    throw UnimplementedError('onLocationPermissionDenied has not been implemented');
+  }
+  
+  Future<bool?> onLocationPermissionGranted() {
+    throw UnimplementedError('onLocationPermissionGranted has not been implemented');
+  }
+
+  Future<bool?> onApplicationPaused() {
+    throw UnimplementedError('onApplicationPaused has not been implemented');
   }
 }

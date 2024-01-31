@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_connecttracker/connecttracker.dart';
@@ -44,11 +45,12 @@ class _MyAppState extends State<MyApp> {
         body: Column(children: [
           const Text('Running on: Android\n'),
           Text(_message),
-          if(!_initialized) TextButton(
-              onPressed: () async {
-                await initializeSDK();
-              },
-              child: const Text('Init SDK')),
+          if (!_initialized)
+            TextButton(
+                onPressed: () async {
+                  await initializeSDK();
+                },
+                child: const Text('Init SDK')),
           TextField(
             decoration: const InputDecoration(
                 border: UnderlineInputBorder(),
@@ -56,53 +58,65 @@ class _MyAppState extends State<MyApp> {
             controller: textEditingController,
             enabled: _initialized && _isOn,
           ),
-          if(_isOn && _initialized) FilledButton(
-              onPressed: () async => {
-                    await _flutterConnecttrackerPlugin.trackEvent(
-                        textEditingController.text, null)
-                  },
-              child: const Text("Track Event")),
-          if(_isOn && _initialized) FilledButton(
-            onPressed: () async {
-              await _flutterConnecttrackerPlugin.turnOffTracking();
-              setState(() {
-                _isOn = false;
-              });
-            },
-            style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.grey)
-              ),
-            child: const Text("TurnOff SDK"),
-          ),
-          if(!_isOn && _initialized) FilledButton(
-            onPressed: () async {
-              await _flutterConnecttrackerPlugin.turnOnTracking();
-              setState(() {
-                _isOn = true;
-              });
-            },
-            style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.deepPurpleAccent)
-              ),
-            child: const Text("Turn On SDK"),
-          ),
+          if (_isOn && _initialized)
+            FilledButton(
+                onPressed: () async => {
+                      _flutterConnecttrackerPlugin.trackEvent(
+                          textEditingController.text, null)
+                    },
+                child: const Text("Track Event")),
+          if (_isOn && _initialized)
+            FilledButton(
+              onPressed: () async {
+                _flutterConnecttrackerPlugin.turnOffTracking();
+                setState(() {
+                  _isOn = false;
+                });
+              },
+              style: const ButtonStyle(
+                  backgroundColor:
+                      MaterialStatePropertyAll<Color>(Colors.grey)),
+              child: const Text("TurnOff SDK"),
+            ),
+          if (!_isOn && _initialized)
+            FilledButton(
+              onPressed: () async {
+                _flutterConnecttrackerPlugin.turnOnTracking();
+                setState(() {
+                  _isOn = true;
+                });
+              },
+              style: const ButtonStyle(
+                  backgroundColor:
+                      MaterialStatePropertyAll<Color>(Colors.deepPurpleAccent)),
+              child: const Text("Turn On SDK"),
+            ),
+            if (!_isOn && _initialized)
+            FilledButton(
+              onPressed: () async {
+                
+              },
+              style: const ButtonStyle(
+                  backgroundColor:
+                      MaterialStatePropertyAll<Color>(Colors.deepPurpleAccent)),
+              child: const Text("Turn On Location Services"),
+            ),
         ]),
       ),
     );
   }
 
   Future<void> initializeSDK() async {
-    var options =
-        ConnectTrackerOptions("fc8cb1dd304c1060acec8b52f5342cea");
+    var options = ConnectTrackerOptions("fc8cb1dd304c1060acec8b52f5342cea", "5166d4ddf0c0ad2e6d84d3b100730966");
     var callbacks = ConnectTrackerCallbacks();
     callbacks.onSessionStartSuccess =
         (value) => setState(() => _message = "Received session");
-    callbacks.onEventTracked = (value) =>
-        setState(() => _message = "Event Tracked $value[\"name\"]");
-    
+    callbacks.onEventTracked =
+        (value) => setState(() => _message = "Event Tracked $value");
+    callbacks.onEventTrackedFailed = (value) => setState(() => _message = "Event failed $value");
     options.callbacks = callbacks;
-    
-    await _flutterConnecttrackerPlugin.init(options);
+
+    _flutterConnecttrackerPlugin.init(options);
     setState(() {
       _initialized = true;
     });

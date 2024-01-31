@@ -6,4 +6,6 @@ class ConnectTrackerCallbacks {
   ValueChanged<dynamic>? onAttributionChanged;
   ValueChanged<dynamic>? onSessionStartSuccess;
   ValueChanged<dynamic>? onSessionStartFailed;
+  ValueChanged<dynamic>? onAppTrackingPermissionGranted;
+  ValueChanged<dynamic>? onAppTrackingPermissionDenied;
 }

@@ -20,10 +20,6 @@ import com.connectedinteractive.connectsdk.ConnectTrackerSessionFailed
 
 /** FlutterConnecttrackerPlugin */
 class FlutterConnecttrackerPlugin : FlutterPlugin, MethodCallHandler {
-    /// The MethodChannel that will the communication between Flutter and native Android
-    ///
-    /// This local reference serves to register the plugin with the Flutter Engine and unregister it
-    /// when the Flutter Engine is detached from the Activity
     private lateinit var channel: MethodChannel
     private lateinit var context: Context
     private val initHelper = ConnectTrackerInitHelper();
@@ -45,6 +41,11 @@ class FlutterConnecttrackerPlugin : FlutterPlugin, MethodCallHandler {
             "appWillOpenUrl" -> {
                 handleDeepLinkOpen(call, result)
             }
+            "resolveDeeplink" -> {
+                val url = call.argument<String>("url")
+                val urlPrefixes = call.argument<Array<String>>("urlPrefixes") ?: emptyArray()
+                ConnectTracker.resolveDeeplink(url, urlPrefixes)
+            }
             "turnOffTracking" -> {
                 ConnectTracker.turnOffTracking()
                 result.success(true)
@@ -52,6 +53,27 @@ class FlutterConnecttrackerPlugin : FlutterPlugin, MethodCallHandler {
             "turnOnTracking" -> {
                 ConnectTracker.turnOnTracking()
                 result.success(true)
+            }
+            "isInitialized" -> {
+                result.success(ConnectTracker.isInitialized())
+            }
+            "isTrackingOn" -> {
+                result.success(ConnectTracker.isTrackingOn())
+            }
+            "deleteUserData" -> {
+                ConnectTracker.deleteUserData()
+            }
+            "onLocationPermissionGranted" -> {
+                ConnectTracker.onLocationPermissionGranted()
+            }
+            "onLocationPermissionDenied" -> {
+                ConnectTracker.onLocationPermissionDenied()
+            }
+            "onWillRequestLocationPermission" -> {
+                ConnectTracker.onWillRequestLocationPermission()
+            }
+            "onApplicationPaused" -> {
+                ConnectTracker.onStop()
             }
             else -> {
                 result.notImplemented()
@@ -80,7 +102,7 @@ class FlutterConnecttrackerPlugin : FlutterPlugin, MethodCallHandler {
         result: Result
     ) {
         val options = ConnectTrackerOptions()
-        options.appKey = call.argument("appKey")
+        options.appKey = call.argument("androidAppKey")
         options.isSandboxMode = call.argument<Boolean>("sandbox") ?: false
         options.isDisableAdIdTracking = call.argument<Boolean>("disableTracking") ?: false
         val location = call.argument<Boolean>("useLocation") ?: false

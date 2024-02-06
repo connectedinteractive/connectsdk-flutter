@@ -1,6 +1,6 @@
 name: flutter_connecttracker
-description: "A new Flutter plugin project."
-version: 0.0.1
+description: "Flutter ConnectTracker SDK."
+version: 1.0.0
 homepage:
 
 publish_to: none

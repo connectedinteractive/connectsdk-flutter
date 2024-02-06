@@ -68,5 +68,5 @@ android {
 }
 
 dependencies {
-    debugImplementation 'com.connectedinteractive:connecttracker:1.19.5'
+    debugImplementation 'com.connectedinteractive:connecttracker:2.0.0'
 }

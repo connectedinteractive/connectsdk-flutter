@@ -35,12 +35,10 @@ public class FlutterConnecttrackerPlugin: NSObject, FlutterPlugin {
             result(.some(true))
             break
         case "isInitialized":
-            ConnectTracker.isInitialized()
-            result(.some(true))
+            result(.some(ConnectTracker.isInitialized()))
             break
         case "isTrackingOn":
-            ConnectTracker.isTrackingOn()
-            result(.some(true))
+            result(.some(ConnectTracker.isTrackingOn()))
             break
         case "deleteUserData":
             ConnectTracker.deleteUserData()
@@ -90,6 +88,20 @@ fileprivate extension FlutterConnecttrackerPlugin {
         result(.some(true))
     }
     
+    func requestAppTrackingPermissionIfNeeded(_ arguments: [String : Any]) {
+        let requestAppTrackingPermission = (arguments["requestAppTrackingPermission"] as? Bool) ?? false
+        if(requestAppTrackingPermission && ConnectTracker.needsAppTrackingPermission()) {
+            ConnectTracker.requestAppTrackingPermission { permissionResult in
+                switch permissionResult {
+                case 3:
+                    FlutterConnecttrackerPlugin.channel?.invokeMethod("onAppTrackingPermissionGranted", arguments: permissionResult)
+                default:
+                    FlutterConnecttrackerPlugin.channel?.invokeMethod("onAppTrackingPermissionDenied", arguments: permissionResult)
+                }
+            }
+        }
+    }
+    
     func initSdk(_ arguments: [String: Any]?, result: FlutterResult) {
         guard let arguments = arguments, let appKey = arguments["iosAppKey"] as? String else {
             result(.some(false))
@@ -104,19 +116,9 @@ fileprivate extension FlutterConnecttrackerPlugin {
         
         ConnectTracker.`init`(options)
         
-        let requestAppTrackingPermission = (arguments["requestAppTrackingPermission"] as? Bool) ?? false
-        if(requestAppTrackingPermission && ConnectTracker.needsAppTrackingPermission()) {
-            ConnectTracker.requestAppTrackingPermission { permissionResult in
-                switch permissionResult {
-                case 3:
-                    FlutterConnecttrackerPlugin.channel?.invokeMethod("onAppTrackingPermissionGranted", arguments: permissionResult)
-                default:
-                    FlutterConnecttrackerPlugin.channel?.invokeMethod("onAppTrackingPermissionDenied", arguments: permissionResult)
-                }
-            }
-        }
+        requestAppTrackingPermissionIfNeeded(arguments)
         
-        result(.some(true))
+        result(true)
     }
     
     func handleDeeplink(_ arguments: [String: Any]?, result: FlutterResult) {

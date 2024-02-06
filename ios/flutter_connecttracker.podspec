@@ -21,5 +21,5 @@ A new Flutter plugin project.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
   s.vendored_frameworks = 'Frameworks/ConnectTracker.xcframework'
-  s.dependency 'Adjust', '~> 4.33.4'
+  s.dependency 'Adjust', '~> 4.37.0'
 end

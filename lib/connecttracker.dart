@@ -3,8 +3,8 @@ import 'package:flutter_connecttracker/connecttracker_options.dart';
 import 'connecttracker_platform_interface.dart';
 
 class ConnectTracker {
-  void init(ConnectTrackerOptions options) {
-    ConnectTrackerPlatform.instance.init(options);
+  Future<bool?> init(ConnectTrackerOptions options) {
+    return ConnectTrackerPlatform.instance.init(options);
   }
 
   Future<bool?> trackEvent(String name, dynamic value) {

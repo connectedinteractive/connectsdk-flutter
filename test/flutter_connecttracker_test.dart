@@ -1,6 +1,5 @@
 import 'package:flutter_connecttracker/connecttracker_options.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_connecttracker/connecttracker.dart';
 import 'package:flutter_connecttracker/connecttracker_platform_interface.dart';
 import 'package:flutter_connecttracker/connecttracker_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';

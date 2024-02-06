@@ -14,14 +14,6 @@
 
 +(void)init:(ConnectTrackerOptions*)connectTrackerOptions;
 
-+(void)init:(NSString *)appKey andDelegate:(NSObject *)delegate __deprecated_msg("As of release 1.8.0, replaced by init[ConnectTrackerOptions].");
-+(void)init:(NSDictionary *)launchOptions withAppKey:(NSString *)appKey andDelegate:(NSObject *)delegate withPushNotifications:(BOOL)useNotifications __deprecated_msg("As of release 1.8.0, replaced by init[ConnectTrackerOptions].");
-+(void)init:(NSDictionary *)launchOptions withAppKey:(NSString *)appKey andDelegate:(NSObject *)delegate withClosure:(NotifcationBlock)closure __deprecated_msg("As of release 1.8.0, replaced by init[ConnectTrackerOptions].");
-
-+(void)initWithLocationServices:(NSString *)appKey __deprecated_msg("As of release 1.8.0, replaced by init[ConnectTrackerOptions].");
-+(void)initWithLocationServices:(NSDictionary *)launchOptions withAppKey:(NSString *)appKey withPushNotifications:(BOOL)useNotifications __deprecated_msg("As of release 1.8.0, replaced by init[ConnectTrackerOptions].");
-+(void)initWithLocationServices:(NSDictionary *)launchOptions withAppKey:(NSString *)appKey withClosure:(NotifcationBlock)closure __deprecated_msg("As of release 1.8.0, replaced by init[ConnectTrackerOptions].");
-
 +(void)onLocationPermissionGranted;
 +(void)onLocationPermissionDenied;
 +(void)onWillRequestLocationPermission;

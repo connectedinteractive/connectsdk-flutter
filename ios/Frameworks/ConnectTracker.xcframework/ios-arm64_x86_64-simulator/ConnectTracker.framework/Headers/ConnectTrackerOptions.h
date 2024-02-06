@@ -13,7 +13,6 @@
 @interface ConnectTrackerOptions : NSObject
 
 @property NSString* appKey;
-@property NSDictionary* launchOptions;
 @property (nonatomic, weak) id<ConnectTrackerCallback> connectTrackerCallback;
 @property NotifcationBlock notificationBlock;
 @property bool useLocationServices;

@@ -109,6 +109,7 @@ class FlutterConnecttrackerPlugin : FlutterPlugin, MethodCallHandler {
         options.setUseLocationServices(location)
         options.context = this.context
         initHelper.init(options, channel);
+
         result.success(true)
     }
 

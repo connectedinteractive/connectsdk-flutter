@@ -91,16 +91,6 @@ class _MyAppState extends State<MyApp> {
                       MaterialStatePropertyAll<Color>(Colors.deepPurpleAccent)),
               child: const Text("Turn On SDK"),
             ),
-            if (!_isOn && _initialized)
-            FilledButton(
-              onPressed: () async {
-                
-              },
-              style: const ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll<Color>(Colors.deepPurpleAccent)),
-              child: const Text("Turn On Location Services"),
-            ),
         ]),
       ),
     );
@@ -115,10 +105,10 @@ class _MyAppState extends State<MyApp> {
         (value) => setState(() => _message = "Event Tracked $value");
     callbacks.onEventTrackedFailed = (value) => setState(() => _message = "Event failed $value");
     options.callbacks = callbacks;
+    final initialized =  await _flutterConnecttrackerPlugin.init(options) ?? false;
 
-    _flutterConnecttrackerPlugin.init(options);
     setState(() {
-      _initialized = true;
+      _initialized = initialized;
     });
   }
 }

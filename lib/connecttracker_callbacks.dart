@@ -8,4 +8,5 @@ class ConnectTrackerCallbacks {
   ValueChanged<dynamic>? onSessionStartFailed;
   ValueChanged<dynamic>? onAppTrackingPermissionGranted;
   ValueChanged<dynamic>? onAppTrackingPermissionDenied;
+  ValueChanged<dynamic>? onDeeplinkResolved;
 }

@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)onAttributionChanged:(ConnectTrackerAttribution*)connectTrackerAttribution;
 -(void)onSessionStartSuccess:(ConnectTrackerSession*)connectTrackerSession;
 -(void)onSessionStartFailed:(ConnectTrackerSessionFailed*)connectTrackerSessionFailed;
+-(void)onDeepLinkResolved:(NSURL*)url;
 
 @end
 

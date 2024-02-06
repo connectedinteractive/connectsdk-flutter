@@ -9,7 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
-#define CONNECTTRACKER_SDK_VERSION @"1159"
+#define CONNECTTRACKER_SDK_VERSION @"201"
 #define CONNECTTRACKER_URL_SCHEME @"https"
 #define CONNECTTRACKER_HOSTNAME @"ads.connectedinteractive.com" //
 #define CONNECTTRACKER_BASE_URL CONNECTTRACKER_URL_SCHEME @"://" CONNECTTRACKER_HOSTNAME

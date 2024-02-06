@@ -16,7 +16,7 @@ class MethodChannelConnectTracker extends ConnectTrackerPlatform {
       case 'onEventTracked':
         _options?.callbacks?.onEventTracked?.call(call.arguments);
         break;
-      case 'onEventTrackedFailed':
+      case 'onEventTrackFailed':
         _options?.callbacks?.onEventTrackedFailed?.call(call.arguments);
         break;
       case 'onAttributionChanged':

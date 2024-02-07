@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  test_ios:
     runs-on: macOS-latest
 
     steps:
@@ -21,3 +21,30 @@ jobs:
           channel: 'stable'
       - run: cd example && flutter pub get
       - run: cd example && flutter test integration_test
+  test_android:
+    runs-on: macos-11
+    strategy:
+      matrix:
+        api-level:
+          - 33
+          # you can add more API level if you want to run your tests on different API
+      fail-fast: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          # instead of "channel: stable", you could be more precise by specifying the exact version of Flutter you're using:
+          # flutter-version: '<FLUTTER_VERSION>'
+      - name: Install Flutter dependencies
+        run: cd example && flutter pub get
+      - name: Run integration tests
+        # more info on https://github.com/ReactiveCircus/android-emulator-runner
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          arch: x86_64
+          profile: Nexus 6
+          script: cd example && flutter test integration_test --verbose
+    

@@ -1,4 +1,4 @@
 # flutter_connecttracker
  Connect Tracker SDK for Flutter
 
-<a href=”https://github.com/connectedinteractive/connectsdk-flutter/actions"><img src=”https://github.com/connectedinteractive/connectsdk-flutter/workflows/FlutterConnectTrackerTests/badge.svg" alt=”Build Status”></a>
+[![FlutterConnectTrackerTests](https://github.com/connectedinteractive/connectsdk-flutter/actions/workflows/main.yml/badge.svg)](https://github.com/connectedinteractive/connectsdk-flutter/actions/workflows/main.yml)

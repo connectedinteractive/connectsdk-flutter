@@ -134,6 +134,10 @@ fileprivate extension FlutterConnecttrackerPlugin {
 }
 
 extension FlutterConnecttrackerPlugin: ConnectTrackerCallback {
+    public func onDeepLinkResolved(_ url: URL) {
+        FlutterConnecttrackerPlugin.channel?.invokeMethod("onEventTracked", arguments: url)
+    }
+    
     public func onEventTracked(_ connectTrackerEvent: ConnectTrackerEvent) {
         let arguments = [
             "timestamp": connectTrackerEvent.timestamp,

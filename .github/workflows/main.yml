@@ -19,6 +19,5 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-
-      - run: flutter pub get
-      - run: flutter test integration_test
+      - run: cd example && flutter pub get
+      - run: cd example && flutter test integration_test

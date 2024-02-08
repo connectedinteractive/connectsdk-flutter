@@ -102,4 +102,8 @@ class ConnectTrackerInitHelper : ConnectTrackerCallback {
             )
         );
     }
+
+    override fun onDeeplinkResolved(p0: String?) {
+        channel.invokeMethod("onDeeplinkResolved", p0)
+    }
 }

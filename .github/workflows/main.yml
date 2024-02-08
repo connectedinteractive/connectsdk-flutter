@@ -41,7 +41,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribution: 'oracle'
+          distribution: 'temurin'
       - name: Install Flutter dependencies
         run: cd example && flutter pub get
       - name: Run integration tests

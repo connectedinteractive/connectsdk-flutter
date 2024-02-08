@@ -37,6 +37,11 @@ jobs:
           channel: stable
           # instead of "channel: stable", you could be more precise by specifying the exact version of Flutter you're using:
           # flutter-version: '<FLUTTER_VERSION>'
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'oracle'
       - name: Install Flutter dependencies
         run: cd example && flutter pub get
       - name: Run integration tests

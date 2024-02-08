@@ -52,4 +52,29 @@ jobs:
           arch: x86_64
           profile: Nexus 6
           script: cd example && flutter pub get && flutter test integration_test
-          
+  version_bump:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for android tests to succeed
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: main
+          check-name: test_android
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 20
+      - name: Wait for ios tests to succeed
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: main
+          check-name: ios_android
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 20
+
+      - uses: subosito/flutter-action@v2
+      - run: flutter pub get
+      - run: version patch
+      - run: git add pubspec.yaml lib/version.dart
+      - run: git commit -m "Bump version to \${CI_COMMIT_TAG}"
+      - run: git tag -a "\${CI_COMMIT_TAG}" -m "Version \${CI_COMMIT_TAG}"
+      - run: git push origin "\${CI_COMMIT_TAG}"

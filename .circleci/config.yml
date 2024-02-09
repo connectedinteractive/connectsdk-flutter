@@ -1,0 +1,28 @@
+version: 2.1
+orbs:
+  flutter: circleci/flutter@2.0.2
+  macos-orb: circleci/macos@2.4.1
+jobs:
+  test-ios:
+    macos:
+      xcode: 15.2.0
+    environment:
+      FL_OUTPUT_DIR: output
+    steps:
+      - checkout
+      - flutter/install_sdk_and_pub:
+          version: 3.16.9
+      - macos-orb/preboot-simulator:
+          device: iPhone 15
+          version: "17.2"
+      - run:
+          name: Test
+          command: cd example && flutter pub get && flutter test integration_test
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
+workflows:
+  flutter_sdk_test_workflow:
+    jobs:
+      - test-ios

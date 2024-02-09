@@ -59,14 +59,14 @@ jobs:
       - name: Wait for android tests to succeed
         uses: lewagon/wait-on-check-action@v1.3.1
         with:
-          ref: main
+          ref: ${{ github.sha }}
           check-name: test_android
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 20
       - name: Wait for ios tests to succeed
         uses: lewagon/wait-on-check-action@v1.3.1
         with:
-          ref: main
+          ref: ${{ github.sha }}
           check-name: ios_android
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 20

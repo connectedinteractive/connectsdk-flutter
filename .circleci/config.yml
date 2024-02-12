@@ -93,17 +93,10 @@ jobs:
             if [ "$LAST_COMMIT" = "Release $RELEASE_VERSION" ]; then
                 circleci-agent step halt
             fi
-      - run:
-          name: Bump Version and update change log
-          command: |
             BUMP_TYPE=$(echo $LAST_COMMIT| cut -d'_' -f 2)
             echo $BUMP_TYPE
             $HOME/.pub-cache/bin/cider bump $BUMP_TYPE
             RELEASE_VERSION=$($HOME/.pub-cache/bin/cider version)
-      - run:
-          name: Commit latest version
-          command: |
-            git add .
             git tag $RELEASE_VERSION
             git commit -m "Release $RELEASE_VERSION"
             git push --tags

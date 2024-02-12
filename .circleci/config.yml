@@ -82,17 +82,41 @@ jobs:
       - run:
           name: Activate cider
           command: |
-            export PATH="$PATH":"$HOME/.pub-cache/bin"
-            pub global activate cider
+            flutter pub global activate cider
+      - run: 
+          name: Get last commit and exit if needed
+          command: |
+            LAST_COMMIT=$(git log -1 --pretty=%B | cat)
+            RELEASE_VERSION=$($HOME/.pub-cache/bin/cider version)
+            echo $LAST_COMMIT
+            echo $RELEASE_VERSION
+            if [ "$LAST_COMMIT" = "Release $RELEASE_VERSION" ]; then
+                circleci-agent step halt
+            fi
       - run:
           name: Bump Version and update change log
           command: |
-            echo "$LAST_COMMIT=$(git log -1 --pretty=%B | cat)" >> "$BASH_ENV"
-            echo "$BUMP_TYPE=$(echo $LAST_COMMIT| cut -d'_' -f 2)
-            cider bump $BUMP_TYPE
+            BUMP_TYPE=$(echo $LAST_COMMIT| cut -d'_' -f 2)
+            echo $BUMP_TYPE
+            $HOME/.pub-cache/bin/cider bump $BUMP_TYPE
+            RELEASE_VERSION=$($HOME/.pub-cache/bin/cider version)
+      - run:
+          name: Commit latest version
+          command: |
+            git add .
+            git tag $RELEASE_VERSION
+            git commit -m "Release $RELEASE_VERSION"
+            git push --tags
 workflows:
   flutter_sdk_test_workflow:
     jobs:
       - test-ios
       - test-android
-      - release_new_version
+      - release_new_version:
+          requires:
+            - test-ios
+            - test-android
+          filters:
+            branches:
+              only:
+                - main

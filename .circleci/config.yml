@@ -98,6 +98,7 @@ jobs:
             $HOME/.pub-cache/bin/cider bump $BUMP_TYPE
             RELEASE_VERSION=$($HOME/.pub-cache/bin/cider version)
             git tag $RELEASE_VERSION
+            git add .
             git commit -m "Release $RELEASE_VERSION"
             git push --tags
 workflows:

@@ -67,8 +67,32 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
+  release_new_version:
+    macos:
+      xcode: 15.2.0
+    environment:
+      FL_OUTPUT_DIR: output
+    steps:
+      - checkout
+      - flutter/install_sdk_and_pub:
+          version: 3.16.9
+      - run:
+          name: Pub Get
+          command: flutter pub get 
+      - run:
+          name: Activate cider
+          command: |
+            export PATH="$PATH":"$HOME/.pub-cache/bin"
+            pub global activate cider
+      - run:
+          name: Bump Version and update change log
+          command: |
+            echo "$LAST_COMMIT=$(git log -1 --pretty=%B | cat)" >> "$BASH_ENV"
+            echo "$BUMP_TYPE=$(echo $LAST_COMMIT| cut -d'_' -f 2)
+            cider bump $BUMP_TYPE
 workflows:
   flutter_sdk_test_workflow:
     jobs:
       - test-ios
       - test-android
+      - release_new_version

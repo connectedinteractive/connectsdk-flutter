@@ -1,3 +1,3 @@
-## 0.0.1
-
-* TODO: Describe initial release.
+## 1.0.2 - 2024-02-09
+### Added
+- Added automatic semantic versioning with Cider

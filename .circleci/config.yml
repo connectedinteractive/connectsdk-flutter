@@ -91,17 +91,19 @@ jobs:
             echo $LAST_COMMIT
             echo $RELEASE_VERSION
             if [ "$LAST_COMMIT" = "Release $RELEASE_VERSION" ]; then
-                circleci-agent step halt
+              echo "Version $RELEASE_VERSION already"
+              circleci-agent step halt
+            else
+              BUMP_TYPE=$(echo $LAST_COMMIT| cut -d'_' -f 2)
+              echo $BUMP_TYPE
+              $HOME/.pub-cache/bin/cider bump $BUMP_TYPE
+              RELEASE_VERSION=$($HOME/.pub-cache/bin/cider version)
+              git tag $RELEASE_VERSION
+              git add .
+              git commit -m "Release $RELEASE_VERSION"
+              git push --tags
+              git push origin main
             fi
-            BUMP_TYPE=$(echo $LAST_COMMIT| cut -d'_' -f 2)
-            echo $BUMP_TYPE
-            $HOME/.pub-cache/bin/cider bump $BUMP_TYPE
-            RELEASE_VERSION=$($HOME/.pub-cache/bin/cider version)
-            git tag $RELEASE_VERSION
-            git add .
-            git commit -m "Release $RELEASE_VERSION"
-            git push --tags
-            git push origin main
 workflows:
   flutter_sdk_test_workflow:
     jobs:

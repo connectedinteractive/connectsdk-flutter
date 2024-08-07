@@ -97,7 +97,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initializeSDK() async {
-    var options = ConnectTrackerOptions("fc8cb1dd304c1060acec8b52f5342cea", "5166d4ddf0c0ad2e6d84d3b100730966");
+    var options = ConnectTrackerOptions("", "");
     var callbacks = ConnectTrackerCallbacks();
     callbacks.onSessionStartSuccess =
         (value) => setState(() => _message = "Received session");

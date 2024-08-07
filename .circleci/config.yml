@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  flutter: circleci/flutter@2.0.2
+  flutter: circleci/flutter@2.0.4
   macos-orb: circleci/macos@2.4.1
 jobs:
   test-ios:

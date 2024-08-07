@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  flutter: circleci/flutter@2.0.2
+  flutter: circleci/flutter@2.0.4
   macos-orb: circleci/macos@2.4.1
 jobs:
   test-ios:
@@ -83,6 +83,11 @@ jobs:
           name: Activate cider
           command: |
             flutter pub global activate cider
+      - run:
+          name: Set Git Author
+          command: |
+            git config --global user.name ${GIT_AUTHOR}
+            git config --global user.email ${GIT_EMAIL}
       - run: 
           name: Get last commit and exit if needed
           command: |

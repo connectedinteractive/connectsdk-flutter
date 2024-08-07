@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ConnectDeviceInfo.h"
 #import "ConnectTrackerCallback.h"
-#import <Adjust/Adjust.h>
+#import <AdjustSdk/Adjust.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

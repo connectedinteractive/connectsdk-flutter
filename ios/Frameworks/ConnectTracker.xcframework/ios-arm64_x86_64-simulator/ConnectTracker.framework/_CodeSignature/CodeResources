@@ -4,13 +4,33 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/AdjustSdk.framework/AdjustSdk</key>
+		<data>
+		AFYZED9/0XaF6fFywFBOBNE83+A=
+		</data>
+		<key>Frameworks/AdjustSdk.framework/Info.plist</key>
+		<data>
+		RXB+qHKIIoxOHTm11YyuKiNNlF4=
+		</data>
+		<key>Frameworks/AdjustSdk.framework/ModuleMap/module.modulemap</key>
+		<data>
+		1KlLQmOxz7cnuL2DW0qaEvfqGAk=
+		</data>
+		<key>Frameworks/AdjustSdk.framework/PrivacyInfo.xcprivacy</key>
+		<data>
+		hDz9iehVwhrMXRIM5MSWX2FPniY=
+		</data>
+		<key>Frameworks/AdjustSdk.framework/_CodeSignature/CodeResources</key>
+		<data>
+		lbGZoWr1964JST1ZNBzaPVJLcng=
+		</data>
 		<key>Headers/AttributionData.h</key>
 		<data>
 		5hilXQPIBMP1sCtD87ZuRR9JEB8=
 		</data>
 		<key>Headers/CI_AdjustHelper.h</key>
 		<data>
-		9+F3+DXxcQxMph7P0ADju3gNRuU=
+		Uwyn1TulQfL2lsoNaRzOi2nqKKY=
 		</data>
 		<key>Headers/CI_AuthenticationHttpClient.h</key>
 		<data>
@@ -152,10 +172,6 @@
 		<data>
 		xNlkjyCAMbZ/a5n0kUckcfuIMM8=
 		</data>
-		<key>Headers/Constants.h</key>
-		<data>
-		xB95OGTLHLJSZNF5n+wkA+8Wu+E=
-		</data>
 		<key>Headers/InMemoryCallbackQueue.h</key>
 		<data>
 		GAMyQLrVmpwf8Wv3EDXyrruZaxY=
@@ -182,7 +198,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BkNG+f3eyn8Aka+DDcnX0UCaHLg=
+		wY1lpXkaWLNs6MlPMMu0D4jXamA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -192,11 +208,74 @@
 		<data>
 		zC8yo6pO7jh/oiOlzFoHoiGuGmQ=
 		</data>
+		<key>PrivateHeaders/Constants.h</key>
+		<data>
+		xB95OGTLHLJSZNF5n+wkA+8Wu+E=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/AdjustSdk.framework/AdjustSdk</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AFYZED9/0XaF6fFywFBOBNE83+A=
+			</data>
+			<key>hash2</key>
+			<data>
+			mzfZ7MJL8jx5OAuem9VeW0aF/fFDFuDentqzL6UCTm4=
+			</data>
+		</dict>
+		<key>Frameworks/AdjustSdk.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			RXB+qHKIIoxOHTm11YyuKiNNlF4=
+			</data>
+			<key>hash2</key>
+			<data>
+			tOA35oBZg+792V79HWUw15UWv6czDYYkZxaklnqv3OU=
+			</data>
+		</dict>
+		<key>Frameworks/AdjustSdk.framework/ModuleMap/module.modulemap</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1KlLQmOxz7cnuL2DW0qaEvfqGAk=
+			</data>
+			<key>hash2</key>
+			<data>
+			oPkSRze7OSkHNtR1Heg/7xueRoz+YEed/ZA6+Ij5bt4=
+			</data>
+		</dict>
+		<key>Frameworks/AdjustSdk.framework/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hDz9iehVwhrMXRIM5MSWX2FPniY=
+			</data>
+			<key>hash2</key>
+			<data>
+			Z/HEbUL7UnTPrrTmuv87yKnVbSunF7nX8XlnunDuNn0=
+			</data>
+		</dict>
+		<key>Frameworks/AdjustSdk.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lbGZoWr1964JST1ZNBzaPVJLcng=
+			</data>
+			<key>hash2</key>
+			<data>
+			cSZHb+PhwCsVgzCIcotL8QWPhQbPWoiflQLWo5j0Q5I=
+			</data>
+		</dict>
 		<key>Headers/AttributionData.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			5hilXQPIBMP1sCtD87ZuRR9JEB8=
+			</data>
 			<key>hash2</key>
 			<data>
 			5GiTQm84C5O88qEobmrMA8jE385qKIyrzl3zaMeQFlQ=
@@ -204,13 +283,21 @@
 		</dict>
 		<key>Headers/CI_AdjustHelper.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			Uwyn1TulQfL2lsoNaRzOi2nqKKY=
+			</data>
 			<key>hash2</key>
 			<data>
-			OOBWcaO5YIelwRpq5FJ3/c3rkP40NQRQbW4rQA6MVzk=
+			0k8KNRGd+pv7Xa54CpZ7xAcl8w0NC+/BBW725a9PR68=
 			</data>
 		</dict>
 		<key>Headers/CI_AuthenticationHttpClient.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			wz1fglupvSES+PKu2pteLKlPXT4=
+			</data>
 			<key>hash2</key>
 			<data>
 			vkxJPlnZukpTY+31feE+5pUNXtrXU83uTxSYZoBvwkw=
@@ -218,6 +305,10 @@
 		</dict>
 		<key>Headers/CI_AuthenticationPostMessage.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			wpYumsIPtrcC8Dc7n2wvZzo+yds=
+			</data>
 			<key>hash2</key>
 			<data>
 			zCWvC+0Zv7O9BXp/IU6Lizr5j86tDgbpVXAnBNXfhDU=
@@ -225,6 +316,10 @@
 		</dict>
 		<key>Headers/CI_AuthenticationQueue.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			N8EmnHDlIi/KIL4zC9Mdsk6Pcqg=
+			</data>
 			<key>hash2</key>
 			<data>
 			dj2B6IOuaID/M+1n/Zv+DjHPZvUCGYcFv9r/A+ZPcx0=
@@ -232,6 +327,10 @@
 		</dict>
 		<key>Headers/CI_ConnectTrackerCore.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			dCnzwLTOkR1vK7yCU4r1z3MwTQw=
+			</data>
 			<key>hash2</key>
 			<data>
 			/8LhJ+XmVrrGqRFV7AHZ44uni2/ehjwzvrxKQhxsJR0=
@@ -239,6 +338,10 @@
 		</dict>
 		<key>Headers/CI_DateUtils.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			X5koFKhpxnRI+VMCa/fVlIxmELY=
+			</data>
 			<key>hash2</key>
 			<data>
 			+mWP3ZnA8x707AVp2gp4miawdw5pN3sd/LK2DgpmPGE=
@@ -246,6 +349,10 @@
 		</dict>
 		<key>Headers/CI_EventCallbackUtils.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			D1MgaH7i3SvN269qX1gH9kglPGA=
+			</data>
 			<key>hash2</key>
 			<data>
 			2GqYBtIAMzoBESQMxAzOddCPrcdj7Bf3O1rmViJ1A8A=
@@ -253,6 +360,10 @@
 		</dict>
 		<key>Headers/CI_HmacUtils.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			1wmmpJKE1gg7bWZ/me3fEtfpEvA=
+			</data>
 			<key>hash2</key>
 			<data>
 			4i5HwS8y5aQTUFn7AvPlgKwOj9XTERcGYLFdgo4Vd7c=
@@ -260,6 +371,10 @@
 		</dict>
 		<key>Headers/CI_HttpClient.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			geauqFfnG2f+4GAT3xrvBWtSe1A=
+			</data>
 			<key>hash2</key>
 			<data>
 			XnPPDFBp2JN9JcnkEUnLEVoviYWmTuY5l2exxd4wV5U=
@@ -267,6 +382,10 @@
 		</dict>
 		<key>Headers/CI_ImpressionID.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			nq4pfirgbBi3ipA4ruFmpPB9b9w=
+			</data>
 			<key>hash2</key>
 			<data>
 			5//HzBlniPZx1bn2OE4xZaX3/99o5hJDX4NmTku+kMk=
@@ -274,6 +393,10 @@
 		</dict>
 		<key>Headers/CI_LocationProvider.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			vi4LSgUt6Y8aGQ8XbS3CeiOPY2U=
+			</data>
 			<key>hash2</key>
 			<data>
 			mP4tUah9NPs6i5ezwqSrQOd1Eg4yij4qQuFmVPpDQoc=
@@ -281,6 +404,10 @@
 		</dict>
 		<key>Headers/CI_LocationResult.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			2CoKPdZkVEhuQE6+g2mf5FHjTnw=
+			</data>
 			<key>hash2</key>
 			<data>
 			3KQcPSr6tjsFmaoKCrvByx4mSdbOjfEhtK0Bp/A9XMY=
@@ -288,6 +415,10 @@
 		</dict>
 		<key>Headers/CI_Logger.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			JedW31RhntGlELC2/74bl74byKk=
+			</data>
 			<key>hash2</key>
 			<data>
 			GPwf0rnxg6Oy/2Xi6CLOgndZghL6zPrmntsfz+XLwno=
@@ -295,6 +426,10 @@
 		</dict>
 		<key>Headers/CI_Notification.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			8LgJLKo+Kt0dqaeMYfstddL9Upc=
+			</data>
 			<key>hash2</key>
 			<data>
 			0+N2FsfW59Yldv7NLtcZxcm0W2g8AFfNZBgBB1l6ZN8=
@@ -302,6 +437,10 @@
 		</dict>
 		<key>Headers/CI_NotificationManager.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			MAQevSlQrR9aB6AqkDJsAsmyKeU=
+			</data>
 			<key>hash2</key>
 			<data>
 			L64mdCxW4P2iRUJbmEO9KSRz9YGvgv5SWnW3NN33nhQ=
@@ -309,6 +448,10 @@
 		</dict>
 		<key>Headers/CI_Poster.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			YjqaIv/qGqv1nvEIOshUBiNspHo=
+			</data>
 			<key>hash2</key>
 			<data>
 			jdTsPhM/djADRC4X3uFPyQZZSxg0JQ2TGlvuRNemR3I=
@@ -316,6 +459,10 @@
 		</dict>
 		<key>Headers/CI_ServerDateManager.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			TtT+lfrEopH4Yi69AqykLuh7ZrU=
+			</data>
 			<key>hash2</key>
 			<data>
 			Spck8yLlZg67A/G5BSQEW8Ke5bBe7dpEIDSP66qgfwE=
@@ -323,6 +470,10 @@
 		</dict>
 		<key>Headers/CI_SharedPreferencesMigrationHelper.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			LtgezlJDAWg5Z4fO0be8qqBELfg=
+			</data>
 			<key>hash2</key>
 			<data>
 			Yu6cvA8B8X+ATXZe6jAmvYTILJnubCA32++0Zizud8c=
@@ -330,6 +481,10 @@
 		</dict>
 		<key>Headers/CI_StringUtils.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			qNbtz82JBs0yh4kBi8oAowSt8WY=
+			</data>
 			<key>hash2</key>
 			<data>
 			G9pDhSQovg21//PS1t8hK6TnQmET/qSp0ICNovd4YDs=
@@ -337,6 +492,10 @@
 		</dict>
 		<key>Headers/CI_UuidUtils.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			/Fc1RuBlyTC7ce4fK3PX7RwfCnA=
+			</data>
 			<key>hash2</key>
 			<data>
 			qfj6LNsk5AiOEnSDgMt017WgyNdJP+HHt1yKR50aIfo=
@@ -344,6 +503,10 @@
 		</dict>
 		<key>Headers/CallbackQueue.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			gF92ao1cMm8tGo3Amk55Bw5aU/U=
+			</data>
 			<key>hash2</key>
 			<data>
 			tc/ejuf5cVXY7nLz9Hy09JwEizlQ40ozW1pq2cahZUw=
@@ -351,6 +514,10 @@
 		</dict>
 		<key>Headers/CommonMacros.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			yWN4A9in4OS2Pnoja2+sUECCwgc=
+			</data>
 			<key>hash2</key>
 			<data>
 			mSHLc+rCcP1budhinT1f7RWzdveKRXjB2XdgFQaWZXE=
@@ -358,6 +525,10 @@
 		</dict>
 		<key>Headers/ConnectDeviceInfo.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			OquDPG4laqGggD2q8TFAthj96mA=
+			</data>
 			<key>hash2</key>
 			<data>
 			r6fqIIZ4x3IT2RWdkEaKJUITQNC8i/dWgovTQFb3EkQ=
@@ -365,6 +536,10 @@
 		</dict>
 		<key>Headers/ConnectSDK.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			XqFRj3P8XaqgdQNuchYmSrCz1FA=
+			</data>
 			<key>hash2</key>
 			<data>
 			ZlSZtl2eWfXh3RFJFEGDdf1f3agNEThiTk6XVh+Jk54=
@@ -372,6 +547,10 @@
 		</dict>
 		<key>Headers/ConnectTracker.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			9RubFQ5GpJ3KMAL5DAGyXquH52U=
+			</data>
 			<key>hash2</key>
 			<data>
 			t1BfNRKI9Q3DX1NxDDL6J1XeTATI2fI3N1fKN1Moq60=
@@ -379,6 +558,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerAttribution.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			GorbABoJaUQjDvw6Vym+OGpS6l8=
+			</data>
 			<key>hash2</key>
 			<data>
 			lOk/LRtAnib2t7MhUiBgY6QG/LzXDzLf9z2GSfLxNZ8=
@@ -386,6 +569,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerCallback.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			2QwCu4tnU7FIOo1VDM0Nt8sgwok=
+			</data>
 			<key>hash2</key>
 			<data>
 			OCZjoibh1GqgWCJ7r4FN2Ava/XCKH6YxoUpCIfMc/o8=
@@ -393,6 +580,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerCallbackData.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			JVTwf2sMzQ4or5ct1u3fcb9lYYY=
+			</data>
 			<key>hash2</key>
 			<data>
 			xnWE9T22AqUtYh3FSu9CarzVFAC92JIpMAo/rtnNBwU=
@@ -400,6 +591,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerConstants.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			jL4UsC0LkKYLothjL539zN54WSo=
+			</data>
 			<key>hash2</key>
 			<data>
 			rgVatXSTTPsiQ9fYpdB32vSjcPu2eu4RgKwALE+KhcQ=
@@ -407,6 +602,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerEvent.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			c69/rQ3sGBLnKvJ9Ytzh6pPAyPU=
+			</data>
 			<key>hash2</key>
 			<data>
 			e8aSkVZuyGUNrPX28QWMWiheh0WpUpUfOeO1Wq65B9k=
@@ -414,6 +613,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerFailedEvent.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			BLUlGKAxy1B3GkcGHc4E0A6Ajus=
+			</data>
 			<key>hash2</key>
 			<data>
 			qVLv8asAYcd0YV5cO2HeUqIYum2ONaMV0Pr2tSefqQs=
@@ -421,6 +624,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerHeader.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			hi8XouLNa9b+Pz5q1P0WgJ7nX2k=
+			</data>
 			<key>hash2</key>
 			<data>
 			OFBHONHvYek+bdzl/FhoFQPvnOqk2mRTJ/ymC6wlfbE=
@@ -428,6 +635,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerOptions.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			KF3FoiGE7mYjEV/EsNivnmEOXcc=
+			</data>
 			<key>hash2</key>
 			<data>
 			DiCU2E6ErzbL7YS2xFGfkCYsPFRMinjFoa0Tjv+R48o=
@@ -435,6 +646,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerSession.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			eiNWRU8zv6VefAo5NguSMEvXBDA=
+			</data>
 			<key>hash2</key>
 			<data>
 			2tn5HjkQUTflUcMS0MlqIId3bcPGRFTF6h78+hzwoek=
@@ -442,6 +657,10 @@
 		</dict>
 		<key>Headers/ConnectTrackerSessionEventData.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			on+SMhgpvZ+WPVtnzsgnVsxD+kc=
+			</data>
 			<key>hash2</key>
 			<data>
 			+4ZvXGU4YmveWdZVkgc0+OIsB2/tsTktmB2/sKKZkG4=
@@ -449,20 +668,21 @@
 		</dict>
 		<key>Headers/ConnectTrackerSessionFailed.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			xNlkjyCAMbZ/a5n0kUckcfuIMM8=
+			</data>
 			<key>hash2</key>
 			<data>
 			Nn8Ofoq++Sm+1RZG6tY6nv2HkCmvfHtztMFbzGJK1AI=
 			</data>
 		</dict>
-		<key>Headers/Constants.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			A6rq/OxCBSVcJ/DG47U74jfxKwCNAPAS7tvFSSl5ltg=
-			</data>
-		</dict>
 		<key>Headers/InMemoryCallbackQueue.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			GAMyQLrVmpwf8Wv3EDXyrruZaxY=
+			</data>
 			<key>hash2</key>
 			<data>
 			NffwcJoJwtXumit385qkYdVRz7y2obCBcV4dgDZtgzY=
@@ -470,6 +690,10 @@
 		</dict>
 		<key>Headers/SCNetworkReachability.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			NJLmgQreadINCRLX+ZWIyo3IifA=
+			</data>
 			<key>hash2</key>
 			<data>
 			kI8ftZVMkV1xj6ct/J208DJpM0hS/am8DePYOuJ6Y9c=
@@ -477,6 +701,10 @@
 		</dict>
 		<key>Headers/SCNetworkStatus.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			4lpAmwRlAOWJ7ltR8LBeWdKbfOc=
+			</data>
 			<key>hash2</key>
 			<data>
 			2dZ1NghRy+blVFp6CfxXIGndc63wwUOBJ0uYr0e2YVQ=
@@ -484,6 +712,10 @@
 		</dict>
 		<key>Headers/SCReachabilityFlagsParser.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			UX7ggojJWdJCq7H5tT84XMcOVtI=
+			</data>
 			<key>hash2</key>
 			<data>
 			zBbpO+vEuIH7o3xjGKRJoWPFKwAyyciWc0JUuvl42HQ=
@@ -491,6 +723,10 @@
 		</dict>
 		<key>Headers/SCReachabilityRefBuilder.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			jhI/Lb25K0FFA9mLFpDo576IbjA=
+			</data>
 			<key>hash2</key>
 			<data>
 			tHFymnog8hZKz+oPymSa7nbjAulRPxjyBrx+6RBRaqs=
@@ -498,6 +734,10 @@
 		</dict>
 		<key>Headers/SCReachabilityScheduler.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			V3MddAG973xGnkcGJEzYFMkevFc=
+			</data>
 			<key>hash2</key>
 			<data>
 			kizUTNxkhWlnVhOoah8BEx0+EwaryqyHqxp9zh9L10Q=
@@ -505,6 +745,10 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			VEKB6upYTFJo66wmfNg8+BLuyIQ=
+			</data>
 			<key>hash2</key>
 			<data>
 			VHEgSbFedEqq2hGZ/GwJHUMWG1HS5qLlcMSeVsRK1WQ=
@@ -512,9 +756,24 @@
 		</dict>
 		<key>PrivacyInfo.xcprivacy</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			zC8yo6pO7jh/oiOlzFoHoiGuGmQ=
+			</data>
 			<key>hash2</key>
 			<data>
 			qRydhrQFT+NevGYwhrqLCNR0lSa3GroCUkqFfR/lEhw=
+			</data>
+		</dict>
+		<key>PrivateHeaders/Constants.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			xB95OGTLHLJSZNF5n+wkA+8Wu+E=
+			</data>
+			<key>hash2</key>
+			<data>
+			A6rq/OxCBSVcJ/DG47U74jfxKwCNAPAS7tvFSSl5ltg=
 			</data>
 		</dict>
 	</dict>

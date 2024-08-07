@@ -13,6 +13,8 @@ void main() {
         if (methodCall.method == 'init') {
           return '42';  
         }
+
+        return '0';
       },
     );
   });

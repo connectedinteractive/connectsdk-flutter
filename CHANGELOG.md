@@ -1,3 +1,7 @@
+## 1.3.0 - 2024-08-08
+### Added
+- Adding documentation and formatting dart file feat(minor)
+
 ## 1.2.3 - 2024-08-08
 ### Added
 - Adding title to README.md PMM-6642

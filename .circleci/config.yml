@@ -99,10 +99,18 @@ jobs:
               echo "Version $RELEASE_VERSION already"
               circleci-agent step halt
             else
-              BUMP_TYPE=$(echo $LAST_COMMIT| cut -d'_' -f 2)
+              BUMP_TYPE=$(echo $LAST_COMMIT| cut -d '(' -f 2 | cut -d ')' -f 1)
               echo $BUMP_TYPE
               $HOME/.pub-cache/bin/cider bump $BUMP_TYPE
               RELEASE_VERSION=$($HOME/.pub-cache/bin/cider version)
+              COMMIT_TYPE=$(echo $LAST_COMMIT | cut -d '(' -f 1 )
+              CHANGE_LOG_TYPE = "fixed"
+              if ["$COMMIT_TYPE" = "feat" ]; then
+                COMMIT_TYPE = "added"
+              fi
+              CHANGE_LOG=$(echo $LAST_COMMIT| cut -d ':' -f 2 )
+              $HOME/.pub-cache/bin/cider log $CHANGE_LOG_TYPE "$CHANGE_LOG"
+              $HOME/.pub-cache/bin/cider release
               git tag $RELEASE_VERSION
               git add .
               git commit -m "Release $RELEASE_VERSION"

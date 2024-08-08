@@ -8,7 +8,6 @@
 
 ## Integrate Mobile App Tracking into your app
 ```dart
-Import ConnectSDK.h file in your project’s AppDelegate.m file
 import 'package:flutter_connecttracker/connecttracker.dart';
 import 'package:flutter_connecttracker/connecttracker_options.dart';
 ...

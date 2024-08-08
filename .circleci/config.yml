@@ -102,12 +102,16 @@ jobs:
               BUMP_TYPE=$(echo $LAST_COMMIT| cut -d '(' -f 2 | cut -d ')' -f 1)
               echo $BUMP_TYPE
               $HOME/.pub-cache/bin/cider bump $BUMP_TYPE
+              LAST_RELEASE_VERSION=$RELEASE_VERSION
               RELEASE_VERSION=$($HOME/.pub-cache/bin/cider version)
               COMMIT_TYPE=$(echo $LAST_COMMIT | cut -d '(' -f 1 )
-              CHANGE_LOG_TYPE = "fixed"
-              if ["$COMMIT_TYPE" = "feat" ]; then
-                COMMIT_TYPE = "added"
+              echo $COMMIT_TYPE
+              CHANGE_LOG_TYPE="fix"
+              if [ "feat" = "$COMMIT_TYPE" ]; then
+                CHANGE_LOG_TYPE="add"
               fi
+              echo $CHANGE_LOG_TYPE
+              $(sed -i '' "s/$LAST_RELEASE_VERSION/$RELEASE_VERSION/g" README.md)
               CHANGE_LOG=$(echo $LAST_COMMIT| cut -d ':' -f 2 )
               $HOME/.pub-cache/bin/cider log $CHANGE_LOG_TYPE "$CHANGE_LOG"
               $HOME/.pub-cache/bin/cider release

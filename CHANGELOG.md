@@ -1,3 +1,7 @@
+## 1.2.1 - 2024-08-08
+### Added
+- Fixing CI Pipeline to change badge version PMM-6622 #comment Fixing CI Pipeline to change badge version #time 1h
+
 ## 1.2.0 - 2024-08-07
 - iOS Framework optimizations
 - CI Pipeline improvements

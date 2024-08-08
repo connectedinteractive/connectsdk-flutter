@@ -1,3 +1,7 @@
+## 1.2.3 - 2024-08-08
+### Added
+- Adding title to README.md PMM-6642
+
 ## 1.2.2 - 2024-08-08
 ### Added
 - Fixing release notes to not include JIRA Smart comment PMM-6642

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+/// Callback methods that will be called by the SDK on certain events.
 class ConnectTrackerCallbacks {
   ValueChanged<dynamic>? onEventTracked;
   ValueChanged<dynamic>? onEventTrackedFailed;

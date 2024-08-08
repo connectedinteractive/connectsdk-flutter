@@ -61,15 +61,18 @@ abstract class ConnectTrackerPlatform extends PlatformInterface {
   }
 
   Future<bool?> onWillRequestLocationPermission() {
-    throw UnimplementedError('onWillRequestLocationPermission has not been implemented');
+    throw UnimplementedError(
+        'onWillRequestLocationPermission has not been implemented');
   }
 
   Future<bool?> onLocationPermissionDenied() {
-    throw UnimplementedError('onLocationPermissionDenied has not been implemented');
+    throw UnimplementedError(
+        'onLocationPermissionDenied has not been implemented');
   }
-  
+
   Future<bool?> onLocationPermissionGranted() {
-    throw UnimplementedError('onLocationPermissionGranted has not been implemented');
+    throw UnimplementedError(
+        'onLocationPermissionGranted has not been implemented');
   }
 
   Future<bool?> onApplicationPaused() {

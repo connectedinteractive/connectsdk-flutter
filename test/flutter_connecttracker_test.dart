@@ -9,55 +9,55 @@ class MockFlutterConnecttrackerPlatform
     implements ConnectTrackerPlatform {
   @override
   Future<bool?> init(ConnectTrackerOptions options) => Future.value(true);
-  
+
   @override
   Future<bool?> trackEvent(String name, value) => Future.value(true);
-  
+
   @override
   Future<bool?> deleteUserData() {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<bool?> isInitialized() {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<bool?> isTrackingOn() {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<bool?> resolveDeeplink(String url, List urlPrefixes) {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<bool?> turnOffTracking() {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<bool?> turnOnTracking() {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<bool?> appWillOpenUrl(String url) {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<bool?> onLocationPermissionDenied() {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<bool?> onLocationPermissionGranted() {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<bool?> onWillRequestLocationPermission() {
     throw UnimplementedError();

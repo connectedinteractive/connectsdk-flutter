@@ -1,5 +1,6 @@
 import 'package:flutter_connecttracker/connecttracker_callbacks.dart';
 
+/// Options to initialize the ConnectTracker SDK
 class ConnectTrackerOptions {
   String iosAppKey;
   String androidAppKey;

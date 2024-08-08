@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_connecttracker/connecttracker.dart';
@@ -103,9 +102,11 @@ class _MyAppState extends State<MyApp> {
         (value) => setState(() => _message = "Received session");
     callbacks.onEventTracked =
         (value) => setState(() => _message = "Event Tracked $value");
-    callbacks.onEventTrackedFailed = (value) => setState(() => _message = "Event failed $value");
+    callbacks.onEventTrackedFailed =
+        (value) => setState(() => _message = "Event failed $value");
     options.callbacks = callbacks;
-    final initialized =  await _flutterConnecttrackerPlugin.init(options) ?? false;
+    final initialized =
+        await _flutterConnecttrackerPlugin.init(options) ?? false;
 
     setState(() {
       _initialized = initialized;

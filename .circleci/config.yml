@@ -112,7 +112,7 @@ jobs:
               fi
               echo $CHANGE_LOG_TYPE
               $(sed -i '' "s/$LAST_RELEASE_VERSION/$RELEASE_VERSION/g" README.md)
-              CHANGE_LOG=$(echo $LAST_COMMIT| cut -d ':' -f 2 )
+              CHANGE_LOG=$(echo $LAST_COMMIT| cut -d ':' -f 2 | cut -d '#' -f 1)
               $HOME/.pub-cache/bin/cider log $CHANGE_LOG_TYPE "$CHANGE_LOG"
               $HOME/.pub-cache/bin/cider release
               git tag $RELEASE_VERSION

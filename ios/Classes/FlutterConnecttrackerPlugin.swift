@@ -4,10 +4,10 @@ import ConnectTracker
 
 public class FlutterConnecttrackerPlugin: NSObject, FlutterPlugin {
     static var channel: FlutterMethodChannel?
+    static let instance = FlutterConnecttrackerPlugin()
     
     public static func register(with registrar: FlutterPluginRegistrar) {
         channel = FlutterMethodChannel(name: "flutter_connecttracker", binaryMessenger: registrar.messenger())
-        let instance = FlutterConnecttrackerPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel!)
     }
     

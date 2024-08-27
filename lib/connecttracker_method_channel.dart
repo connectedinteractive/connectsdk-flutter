@@ -67,7 +67,11 @@ class MethodChannelConnectTracker extends ConnectTrackerPlatform {
   }
 
   @override
-  Future<bool?> appWillOpenUrl(String url) async {
+  Future<bool?> appWillOpenUrl(String? url) async {
+    if(url == null) {
+      return false;
+    }
+    
     final result = await methodChannel
         .invokeMethod<bool>('appWillOpenUrl', <String, dynamic>{'url': url});
 

@@ -1,3 +1,7 @@
+## 2.0.0 - 2024-08-27
+### Added
+- Moving SDK interface to singleton
+
 ## 1.3.0 - 2024-08-08
 ### Added
 - Adding documentation and formatting dart file feat(minor)

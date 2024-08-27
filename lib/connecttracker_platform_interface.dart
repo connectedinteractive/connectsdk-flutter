@@ -32,7 +32,7 @@ abstract class ConnectTrackerPlatform extends PlatformInterface {
     throw UnimplementedError('trackEvent has not been implemented');
   }
 
-  Future<bool?> appWillOpenUrl(String url) {
+  Future<bool?> appWillOpenUrl(String? url) {
     throw UnimplementedError('appWillOpenUrl has not been implemented');
   }
 

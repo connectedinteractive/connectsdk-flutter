@@ -44,7 +44,7 @@ class MockFlutterConnecttrackerPlatform
   }
 
   @override
-  Future<bool?> appWillOpenUrl(String url) {
+  Future<bool?> appWillOpenUrl(String? url) {
     throw UnimplementedError();
   }
 

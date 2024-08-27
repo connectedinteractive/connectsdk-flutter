@@ -4,6 +4,9 @@ import 'connecttracker_platform_interface.dart';
 
 /// ConnectTracker base class to start attributing events.
 class ConnectTracker {
+  static final ConnectTracker _instance = ConnectTracker();
+  static ConnectTracker get instance => _instance;
+
   /// Initializes the SDK with the [ConnectTrackerOptions].
   Future<bool?> init(ConnectTrackerOptions options) {
     return ConnectTrackerPlatform.instance.init(options);
@@ -15,7 +18,7 @@ class ConnectTracker {
   }
 
   /// Handles deeplink app open.
-  void appWillOpenUrl(String url) {
+  void appWillOpenUrl(String? url) {
     ConnectTrackerPlatform.instance.appWillOpenUrl(url);
   }
 

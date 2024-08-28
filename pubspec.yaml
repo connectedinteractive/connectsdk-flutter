@@ -1,6 +1,6 @@
 name: flutter_connecttracker
 description: "This is the Flutter SDK of ConnectTracker. You can read more about ConnectTracker at conntectedinteractive.com"
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/connectedinteractive/connectsdk-flutter
 
 environment:

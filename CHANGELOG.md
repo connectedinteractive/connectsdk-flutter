@@ -1,3 +1,7 @@
+## 2.0.1 - 2024-08-28
+### Fixed
+- Fix android production build issue
+
 ## 2.0.0 - 2024-08-27
 ### Added
 - Moving SDK interface to singleton
